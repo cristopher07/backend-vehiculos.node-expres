@@ -1,2 +1,5 @@
 
 backend-vehiculos.node-expres
+# dependencies
+/node_modules
+

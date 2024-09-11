@@ -7,7 +7,6 @@ const {sequelize, Sequelize} = require('../libs/sequelize');
 
 
 exports.findAll = async ({ busqueda = "", rowsPerPage = 10, page = 0 }) => {
-    console.log("---busqueda: ", busqueda);
     
     // Calcular el offset para la paginación
     const offset = page * rowsPerPage;
