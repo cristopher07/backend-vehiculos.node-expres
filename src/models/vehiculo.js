@@ -1,22 +1,8 @@
-/* jshint indent: 1 */
+/* jshint indent: 2 */
 
-const { Model, DataTypes, Sequelize } = require('sequelize');
-
-const vehiculo_TABLE = 'vehiculo';
-
-class vehiculo extends Model {
-    static config(sequelize) {
-        return {
-            sequelize,
-            tableName: vehiculo_TABLE,
-            modelName: 'vehiculo',
-            timestamps: true
-        }
-    }
-} 
-
-
-  const vehiculoSchema = {
+const Sequelize = require('sequelize');
+module.exports = function(sequelize, DataTypes) {
+  return sequelize.define('vehiculo', {
     idVehiculo: {
         type: DataTypes.BIGINT,
         allowNull: false,
@@ -57,12 +43,24 @@ class vehiculo extends Model {
         allowNull: true,
         field: 'FK_ID_TIPO_COMBUSTIBLE'
     },
-    fkIdtipoPlaca: {
+    fkIdTipoPlaca: {
         type: DataTypes.BIGINT,
         allowNull: true,
         field: 'FK_ID_TIPO_PLACA'
     },
-  }
-    
-           
-  module.exports = { vehiculo, vehiculoSchema };
+  }, {
+    sequelize,
+    tableName: 'vehiculo',
+    timestamps: false,
+    indexes: [
+      {
+        name: "ID_VEHICULO_PK",
+        unique: true,
+        fields: [
+          { name: "ID_VEHICULO" },
+        ]
+      },
+    ]
+  });
+};
+

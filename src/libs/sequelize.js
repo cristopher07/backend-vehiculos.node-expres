@@ -1,6 +1,5 @@
 const { Sequelize } = require('sequelize');
 const { config } = require('../config/config');
-const setupModels = require('../models');
 
 // Crear una instancia de Sequelize
 const sequelize = new Sequelize(
@@ -17,7 +16,7 @@ const sequelize = new Sequelize(
 sequelize.sync();
 
 // Configurar los modelos
-setupModels(sequelize);
+
 
 // Exportar la instancia de Sequelize
 module.exports = { sequelize, Sequelize };
