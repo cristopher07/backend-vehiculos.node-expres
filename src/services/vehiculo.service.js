@@ -102,10 +102,10 @@ exports.save = async (obj) => {
     defaults: {
       placa: obj.placa,
       modelo: obj.modelo,
-      fkIdColor: obj.fkIdColor,
-      fkIdMarca: obj.fkIdMarca,
-      fkIdTipoCombustible: obj.fkIdTipoCombustible,
-      fkIdTipoPlaca: obj.fkIdTipoPlaca,
+      fkIdColor: obj.idColor,
+      fkIdMarca: obj.idMarca,
+      fkIdTipoCombustible: obj.idTipoCombustible,
+      fkIdTipoPlaca: obj.idTipoPlaca,
       activo: 1,
     },
   };
@@ -134,10 +134,10 @@ exports.editById = async (obj) => {
         const result = await vehiculo.update({
             placa: obj.placa,
             modelo: obj.modelo,
-            fkIdColor: obj.fkIdColor,
-            fkIdMarca: obj.fkIdMarca,
-            fkIdTipoCombustible: obj.fkIdTipoCombustible,
-            fkIdTipoPlaca: obj.fkIdTipoPlaca,
+            fkIdColor: obj.idColor,
+            fkIdMarca: obj.idMarca,
+            fkIdTipoCombustible: obj.idTipoCombustible,
+            fkIdTipoPlaca: obj.idTipoPlaca,
         },{
             where: {
               idVehiculo: obj.idVehiculo,

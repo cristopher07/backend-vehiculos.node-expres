@@ -21,7 +21,13 @@ exports.findByPk = async (id) => {
 
 exports.findAll = async () => {
   try {
-    const result = await color.findAll();
+    const result = await color.findAll(
+      {
+        where: {
+          activo: 1,
+        },
+      }
+    );
     return { valid: true, data: result };
   } catch (error) {
     console.error("Error en el servicio:", error);
